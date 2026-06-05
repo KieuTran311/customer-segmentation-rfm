@@ -84,6 +84,6 @@ Recommended actions: dedicated loyalty program, early access to new products, pr
 
 ## Files
 ```
-├── rfm_query.sql        # Full SQL script
-└── dashboard.pbix       # Power BI dashboard
+├── rfm_query.sql       
+└── dashboard.pbix     
 ```
