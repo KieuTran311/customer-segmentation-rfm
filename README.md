@@ -71,16 +71,16 @@ This pattern has a direct implication: if even a small portion of At Risk custom
 
 ## What the Business Should Do Differently
 
-VIP (21.6% of customers, 68% of revenue): These customers are the business. Losing one VIP ($9,491 avg) costs far more than retaining them.
+**_VIP (21.6% of customers, 68% of revenue):_** These customers are the business. Losing one VIP ($9,491 avg) costs far more than retaining them.
 Recommended actions: dedicated loyalty program, early access to new products, priority customer service. The goal is protection, not acquisition.
 
-At Risk (11.2%, avg $2,456): Highest ROI segment to target with a win-back campaign. They have proven spending history, they just need a reason to come back. A personalized, time-limited offer (not a mass blast) is the right approach.
+**_At Risk (11.2%, avg $2,456):_** Highest ROI segment to target with a win-back campaign. They have proven spending history, they just need a reason to come back. A personalized, time-limited offer (not a mass blast) is the right approach.
 
-New Customer (3.2%, avg $1,434): Good potential based on initial spend. The first 30–60 days are make-or-break, a structured onboarding sequence (product recommendations, usage tips, follow-up) could meaningfully improve conversion to Loyal.
+**_New Customer (3.2%, avg $1,434):_** Good potential based on initial spend. The first 30–60 days are make-or-break, a structured onboarding sequence (product recommendations, usage tips, follow-up) could meaningfully improve conversion to Loyal.
 
-Potential (5.3%, avg $492): Bought recently but infrequently. Light-touch nudge campaigns and product recommendations could increase purchase frequency without heavy discounting.
+**_Potential (5.3%, avg $492):_** Bought recently but infrequently. Light-touch nudge campaigns and product recommendations could increase purchase frequency without heavy discounting.
 
-Churn (24.3%, avg $404): At $404 average revenue, the cost of a win-back campaign likely exceeds the expected return for most of this segment. Better to let them go and redirect that budget toward At Risk and Potential.
+**_Churn (24.3%, avg $404):_** At $404 average revenue, the cost of a win-back campaign likely exceeds the expected return for most of this segment. Better to let them go and redirect that budget toward At Risk and Potential.
 
 ## Files
 ```
