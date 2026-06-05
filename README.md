@@ -5,7 +5,7 @@ Tools: SQL Server, Power BI
 
 A common mistake in retail marketing is treating all customers the same - same email blast, same discount, same message sent to everyone. This wastes budget and misses the point entirely, because a customer who buys every week and spends $500 each time needs a completely different approach from someone who bought once two years ago and never came back.
 
-The specific problem this project addresses: "How do you allocate a limited marketing budget across thousands of customers when you have no systematic way to tell them apart?"
+The specific problem this project addresses: _"How do you allocate a limited marketing budget across thousands of customers when you have no systematic way to tell them apart?"_
 
 RFM is the answer. Instead of guessing, you score every customer on three things: how recently they bought, how often they buy, and how much they spend, then group them into segments that actually mean something for business decisions.
 
