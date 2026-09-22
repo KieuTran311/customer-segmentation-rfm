@@ -72,5 +72,6 @@ The dashboard has KPI cards (Total Customers, Total Revenue, Avg Spend), custome
 
 ```text
 ├── rfm_query.sql
-└── dashboard.pbix
+├── dashboard.pbix
+└── online_retail_II
 ```
