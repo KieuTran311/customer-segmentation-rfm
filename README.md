@@ -14,15 +14,16 @@ I used the Online Retail II dataset (Kaggle) to practice RFM segmentation with S
 
 ## What I did
 
-- Cleaned the data first: dropped cancelled orders (negative Quantity), rows with no Customer_ID and rows where Price wasn't a valid number (`TRY_CONVERT` handled that)
+- Cleaned the data first: dropped cancelled orders (negative Quantity), rows with no Customer_ID and rows where Price wasn't a valid number (`TRY_CONVERT` handled that).
 - Made `TotalAmount = Quantity * Price`
-- Calculated Recency (`DATEDIFF` from each customer's last purchase to the most recent date in the whole dataset), Frequency (`COUNT(DISTINCT Invoice)`) and Monetary (`SUM(TotalAmount)`) per customer
+- Calculated Recency (`DATEDIFF` from each customer's last purchase to the most recent date in the whole dataset), Frequency (`COUNT(DISTINCT Invoice)`) and Monetary (`SUM(TotalAmount)`) per customer.
 - Scored each of R/F/M into 5 buckets with `NTILE(5)`, I added `Customer_ID` as a tiebreaker in the `ORDER BY` to keep the `NTILE(5)` results consistent when values are tied.
-- Used `CASE WHEN` on the three scores to assign a segment name (VIP, Loyal, At Risk, Churn, New Customer, Potential or Others if none of the rules fit)
+- Used `CASE WHEN` on the three scores to assign a segment name (VIP, Loyal, At Risk, Churn, New Customer, Potential or Others if none of the rules fit).
 
 ### Checking whether the segments made sense
 
-I ran a quick sanity check: average Recency/Frequency/Monetary per segment to see if e.g. VIP customers actually look like VIPs and not just some random group.
+I performed a quick check: I calculated the average Recency, Frequency, and Monetary values for each segment to see whether, for example, VIP customers actually looked like VIPs rather than just a random group.
+
 
 | Segment | Avg Recency (days) | Avg Frequency (orders) | Avg Monetary |
 |---|---:|---:|---:|
@@ -34,7 +35,7 @@ I ran a quick sanity check: average Recency/Frequency/Monetary per segment to se
 | Potential | 36.5 | 1.4 | $492 |
 | Churn | 458.0 | 1.3 | $437 |
 
-VIP has the lowest Recency (bought most recently) and highest Frequency/Monetary, Churn is the opposite. If VIP had shown up with high Recency or low Monetary I'd know something was off in my CASE WHENlogic.
+VIP has the lowest Recency (bought most recently) and highest Frequency/Monetary, Churn is the opposite. If VIP had shown up with high Recency or low Monetary I'd know something was off in my CASE WHEN logic.
 
 ## What I found
 
@@ -55,7 +56,7 @@ Churn is the largest group by customer count (26%) but only accounts for 3.8% of
 
 ### About the "Others" segment
 
-Others ended up being 22% of customers, which is a decent chunk. I checked and this isn't a bug - it's customers who just don't clearly match any of my 6 rules (e.g. someone with high Frequency but low Monetary and mediocre Recency doesn't fit VIP, Loyal, At Risk, or Churn as I defined them). This is just a limitation of doing segmentation with hand-written rules instead of something like clustering.
+Others ended up being 22% of customers, which is a decent chunk. I checked and this isn't a bug, it's customers who just don't clearly match any of my 6 rules (e.g. someone with high Frequency but low Monetary and mediocre Recency doesn't fit VIP, Loyal, At Risk, or Churn as I defined them). This is just a limitation of doing segmentation with hand-written rules instead of something like clustering.
 
 ## Power BI
 
@@ -63,10 +64,13 @@ The dashboard has KPI cards (Total Customers, Total Revenue, Avg Spend), custome
 
 ## Things I'd be careful about saying
 
-- These segments are based on rules I wrote, not a model, so "Others" existing is expected, not something wrong with the data
-- The 80/20-like pattern is specific to this dataset and time period (2009-2011, UK retailer), so I wouldn't assume the same pattern holds everywhere
-- I'm not making business recommendations here like spend more on VIP retention since that would need more context than what's in this dataset. I'm just describing the pattern I found
+- These segments are based on rules I wrote, not a model, so "Others" existing is expected, not something wrong with the data.
+- The 80/20-like pattern is specific to this dataset and time period (2009-2011, UK retailer), so I wouldn't assume the same pattern holds everywhere.
+- I'm not making business recommendations here like spend more on VIP retention since that would need more context than what's in this dataset. I'm just describing the pattern I found.
 
+## Conclusion
+
+The analysis shows that revenue is highly concentrated among a relatively small share of customers, with the VIP segment accounting for 68.2% of revenue. The segmentation is based on hand-written rules rather than a predictive model, so I'd treat these segments as a starting point for further customer analysis rather than as fixed customer categories.
 
 ## Files
 
